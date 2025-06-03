@@ -1,0 +1,144 @@
+body {
+    background-color: #fdfdf9;
+    font-family: Open, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-top: 40px;
+}
+
+p {
+    text-align: center;
+}
+
+.inhaltsverzeichnis {
+    background-color: #f0f8f5;
+    border: 1px solid #cce5cc;
+    padding: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 8px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.inhaltsverzeichnis li a {
+    font-weight: bold;
+    color: #2e8b57;
+    text-decoration: none;
+}
+
+.inhaltsverzeichnis li a:hover {
+    text-decoration: underline;
+}
+
+.rezept-info {
+    background-color: #fafafa;
+    padding: 15px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 8px;
+    color: #444;
+}
+
+.zutaten-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.tabelle {
+    flex: 1;
+    min-width: 300px;
+}
+
+.bild {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bild img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.zutaten-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.zutaten-table th,
+.zutaten-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.zutaten-table th {
+    background-color: #dff0d8;
+    text-align: left;
+}
+
+.zubereitung {
+    list-style: decimal inside;
+    padding-left: 20px;
+    background-color: #e9f8ec;
+    border: 2px solid #a4d4ae;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.zubereitung li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.5em;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #cce5cc;
+    margin: 40px auto;
+    width: 80%;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #31708f;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.links a:hover {
+    text-decoration:underline;
+}
