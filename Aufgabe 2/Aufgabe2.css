@@ -12,14 +12,20 @@ header {
   text-align: center;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+.content {
   padding: 2rem;
 }
 
-article {
+.movie-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.movie-grid-item {
   background: white;
   border-radius: 10px;
   overflow: hidden;
@@ -27,28 +33,30 @@ article {
   transition: transform 0.3s ease;
 }
 
-article:hover {
+.movie-grid-item:hover {
   transform: scale(1.03);
 }
 
-article img {
+.card-image img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-article h2 {
-  font-size: 1.2em;
-  margin: 0.5em;
-  color: #222;
+.card-text {
+  padding: 1em;
   text-align: center;
 }
 
-article p {
-  margin: 0.5em;
-  color: #666;
-  text-align: center;
+.card-text h2 {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+  color: #222;
+}
 
+.card-text p {
+  margin: 0.5em 0;
+  color: #666;
 }
 
 a {
