@@ -1,6 +1,5 @@
 # M293_Webauftritt-erstellen-und-veroeffentlichen
 
-
 ## Projektauftrag 3
 ### Webshop mit KI-gestützter Webentwicklung
 
@@ -29,7 +28,6 @@ https://www.figma.com/design/VjMLJ8TG4NhBFMmIYHK4Wb/Low-fi-Wireframe-Template--C
 ![image](https://github.com/user-attachments/assets/f3e35541-0681-40d8-8298-4471496913d6)
 
 ![image](https://github.com/user-attachments/assets/314a7e77-b208-407a-86f7-a35ad78a86ee)
-
 
 
 ### 3. Prompts und Ergebnisse
