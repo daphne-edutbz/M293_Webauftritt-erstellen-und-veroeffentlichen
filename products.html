@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produktübersicht - WebShop</title>
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+      }
+
+      /* Header */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      nav {
+        display: flex;
+        gap: 2rem;
+      }
+      nav a {
+        text-decoration: none;
+        color: #34495e;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      nav a:hover {
+        color: #3498db;
+      }
+
+      /* Main Content */
+      main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      /* Filter Bar */
+      .filter-section {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+      }
+      .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .filter-group label {
+        font-weight: 600;
+        color: #2c3e50;
+      }
+      .filter-group select {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      /* Products Grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      .product-card {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .product-image {
+        height: 200px;
+        overflow: hidden;
+      }
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .product-card:hover .product-image img {
+        transform: scale(1.05);
+      }
+      .product-info {
+        padding: 1.5rem;
+      }
+      .product-info h3 {
+        font-size: 1.2rem;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+      .product-info p {
+        color: #7f8c8d;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+      .product-price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #e74c3c;
+        margin-bottom: 1rem;
+      }
+      .view-details {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+      .view-details:hover {
+        background-color: #2980b9;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 2rem;
+        margin-top: 3rem;
+        text-align: center;
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+      }
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .footer-links a:hover {
+        color: #3498db;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .products-grid {
+          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">WebShop</div>
+      <nav>
+        <a href="index.html">Startseite</a>
+        <a href="products.html">Produkte</a>
+        <a href="contact.html">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="filter-section">
+        <div class="filter-group">
+          <label for="category-filter">Kategorie:</label>
+          <select id="category-filter">
+            <option value="all">Alle Kategorien</option>
+            <option value="electronics">Elektronik</option>
+            <option value="clothing">Kleidung</option>
+            <option value="home">Haushalt</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="products-grid">
+        <!-- Product 1 -->
+        <article class="product-card" data-category="electronics">
+          <a href="productdetail.html?productId=macbook-air">
+            <div class="product-image">
+              <img
+                src="https://www.apple.com/v/macbook-air/u/images/overview/hero/hero_static__c9sislzzicq6_large.png"
+                alt="MacBook Air"
+              />
+            </div>
+            <div class="product-info">
+              <h3>MacBook Air</h3>
+              <p>13,3" Retina Display, M1 Chip, 8GB RAM, 256GB SSD</p>
+              <div class="product-price">1.099,00 €</div>
+              <a
+                href="productdetail.html?productId=macbook-air"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card" data-category="electronics">
+          <a href="productdetail.html?productId=iphone-14">
+            <div class="product-image">
+              <img
+                src="https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-iPhone-14-Plus-2up-starlight-220907-geo_inline.jpg.large.jpg"
+                alt="iPhone 14"
+              />
+            </div>
+            <div class="product-info">
+              <h3>iPhone 14</h3>
+              <p>6,1" Super Retina XDR Display, Dual-Kamera, A15 Bionic Chip</p>
+              <div class="product-price">849,00 €</div>
+              <a
+                href="productdetail.html?productId=iphone-14"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card" data-category="electronics">
+          <a href="productdetail.html?productId=airpods-max">
+            <div class="product-image">
+              <img
+                src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-hero-select-202409_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=WXBZVEZCOUNiUWlBYUtjZmtBc0J2MGkxeEVQUXVsbFk4WEhBc0JFOWdSN2pmMHBIdXRoME5iSzRYUmF4Y3dVRy81NGMrcU1sYkxwTFJaVHI1NEQzenBJRnRzZXYwZVJMZmZQVjdBR0RkVVNpdi91OXpsc3gvUHZvVGU1aUpOaFE"
+                alt="AirPods Max"
+              />
+            </div>
+            <div class="product-info">
+              <h3>AirPods Max</h3>
+              <p>Over-Ear Kopfhörer mit aktivem Noise Cancelling</p>
+              <div class="product-price">549,00 €</div>
+              <a
+                href="productdetail.html?productId=airpods-max"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card" data-category="clothing">
+          <a href="productdetail.html?productId=adidas-hoodie">
+            <div class="product-image">
+              <img
+                src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/dc04fcc1ac7645deb0b537e93f67d381_9366/Trefoil_Essentials_Hoodie_White_IX7669_01_laydown.jpg"
+                alt="Adidas Hoodie"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Adidas Essentials Hoodie</h3>
+              <p>Klassischer Hoodie aus weicher Baumwollmischung</p>
+              <div class="product-price">49,99 €</div>
+              <a
+                href="productdetail.html?productId=adidas-hoodie"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="product-card" data-category="clothing">
+          <a href="productdetail.html?productId=nike-air-force">
+            <div class="product-image">
+              <img
+                src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png"
+                alt="Nike Air Force 1"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Nike Air Force 1</h3>
+              <p>Kultige Sneaker aus Leder mit hohem Tragekomfort</p>
+              <div class="product-price">119,99 €</div>
+              <a
+                href="productdetail.html?productId=nike-air-force"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 6 -->
+        <article class="product-card" data-category="home">
+          <a href="productdetail.html?productId=bosch-toaster">
+            <div class="product-image">
+              <img
+                src="https://media3.bsh-group.com/Product_Shots/5120x/MCSA01619340_G1882_TAT6A003_1070019_corr2_def.webp"
+                alt="Bosch Toaster"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Bosch Toaster</h3>
+              <p>2-Scheiben-Toaster mit integriertem Brötchenaufsatz</p>
+              <div class="product-price">34,99 €</div>
+              <a
+                href="productdetail.html?productId=bosch-toaster"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 7 -->
+        <article class="product-card" data-category="home">
+          <a href="productdetail.html?productUd=philips-wasserkocher">
+            <div class="product-image">
+              <img
+                src="https://static02.galaxus.com/productimages/1/1/2/3/3/9/0/2/6/9/4/6/5/4/0/4/8/7/2/aec828ab-cde2-431b-9f41-7e5ed8032788_cropped.jpg_720.jpeg"
+                alt="Philips Wasserkocher"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Philips Wasserkocher</h3>
+              <p>1,7 Liter Edelstahlkorpus mit automatischer Abschaltung</p>
+              <div class="product-price">39,99 €</div>
+              <a
+                href="productdetail.html?productId=philips-wasserkocher"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 8 -->
+        <article class="product-card" data-category="electronics">
+          <a href="productdetail.html?productId=samsung-tab-s9">
+            <div class="product-image">
+              <img
+                src="https://images.samsung.com/is/image/samsung/p6pim/ch/sm-x710nzaaeue/gallery/ch-galaxy-tab-s9-wifi-x710-sm-x710nzaaeue-538622359?$684_547_PNG$"
+                alt="Samsung Galaxy Tab S9"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Samsung Galaxy Tab S9</h3>
+              <p>11" Dynamic AMOLED 2X, Snapdragon 8 Gen 2, S Pen inklusive</p>
+              <div class="product-price">799,00 €</div>
+              <a
+                href="productdetail.html?productId=samsung-tab-s9"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 9 -->
+        <article class="product-card" data-category="electronics">
+          <a href="productdetail.html?productId=sony-headphones">
+            <div class="product-image">
+              <img
+                src="https://images-na.ssl-images-amazon.com/images/I/414ijz53hCL._UL500_.jpg"
+                alt="Sony WH-1000XM5"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Sony WH-1000XM5</h3>
+              <p>Bluetooth Kopfhörer mit branchenführendem Noise Cancelling</p>
+              <div class="product-price">379,99 €</div>
+              <a
+                href="productdetail.html?productId=sony-headphones"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+
+        <!-- Product 10 -->
+        <article class="product-card" data-category="clothing">
+          <a href="productdetail.html?productId=north-face-jacke">
+            <div class="product-image">
+              <img
+                src="https://img01.ztat.net/article/spp-media-p1/f822a49779534196ace195751cecd28b/69172e4573a643c785c5c0fa9f436f1e.jpg?imwidth=1800&filter=packshot"
+                alt="The North Face Jacke"
+              />
+            </div>
+            <div class="product-info">
+              <h3>The North Face Jacke</h3>
+              <p>Wasser- und winddichte Outdoorjacke für jedes Wetter</p>
+              <div class="product-price">99,99 €</div>
+              <a
+                href="productdetail.html?productId=north-face-jacke"
+                class="view-details"
+                >Details anzeigen</a
+              >
+            </div>
+          </a>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="index.html">Startseite</a>
+        <a href="products.html">Produkte</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="about.html">Über uns</a>
+      </div>
+      <p>© 2025 WebShop. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+      // Category filter functionality
+      document
+        .getElementById("category-filter")
+        .addEventListener("change", function () {
+          const selectedCategory = this.value;
+          const productCards = document.querySelectorAll(".product-card");
+
+          productCards.forEach((card) => {
+            if (
+              selectedCategory === "all" ||
+              card.dataset.category === selectedCategory
+            ) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
