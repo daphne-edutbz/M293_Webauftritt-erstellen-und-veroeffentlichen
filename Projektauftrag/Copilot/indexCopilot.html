@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webshop Startseite</title>
+    <style>
+      :root {
+        --primary: #0078d4;
+        --primary-dark: #005fa3;
+        --light-bg: #fafafa;
+        --card-bg: #fff;
+        --footer-bg: #222;
+        --footer-link: #ffd700;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--light-bg);
+        color: #222;
+      }
+      header {
+        background: var(--primary);
+        color: #fff;
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-left: 2rem;
+        letter-spacing: 1px;
+      }
+      nav {
+        display: flex;
+        gap: 2rem;
+        margin-right: 2rem;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: var(--footer-link);
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      /* Produkt-Grid */
+      .produkte-section h2 {
+        margin-bottom: 1rem;
+      }
+      .produkte-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+      .produkt-card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        padding: 1rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: box-shadow 0.2s;
+      }
+      .produkt-card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+      }
+      .produkt-card img {
+        width: 100%;
+        max-width: 180px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        background: #eee;
+      }
+      .produkt-card h3 {
+        margin: 0.5rem 0 0.3rem 0;
+        font-size: 1.1rem;
+      }
+      .produkt-card .preis {
+        font-weight: bold;
+        color: var(--primary);
+        margin: 0.5rem 0 1rem 0;
+        font-size: 1.1rem;
+      }
+      .produkt-card button {
+        padding: 0.5rem 1.2rem;
+        border-radius: 4px;
+        border: none;
+        background: var(--primary);
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .produkt-card button:hover {
+        background: var(--primary-dark);
+      }
+
+      /* Kategorien */
+      .kategorien-section h2 {
+        margin-bottom: 1rem;
+      }
+      .kategorien-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+      .kategorie-card {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 1.2rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.05rem;
+        transition: background 0.2s;
+      }
+      .kategorie-card:hover {
+        background: #e0e0e0;
+      }
+
+      /* Newsletter */
+      .newsletter-section {
+        background: #e6f2ff;
+        border-radius: 8px;
+        padding: 2rem 1rem;
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .newsletter-section form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1rem;
+      }
+      .newsletter-section input[type="email"] {
+        padding: 0.6rem;
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        width: 100%;
+        max-width: 260px;
+        font-size: 1rem;
+      }
+      .newsletter-section button {
+        padding: 0.6rem 1.5rem;
+        border-radius: 4px;
+        border: none;
+        background: var(--primary);
+        color: #fff;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .newsletter-section button:hover {
+        background: var(--primary-dark);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--footer-bg);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem 1rem 1rem;
+        margin-top: 2rem;
+      }
+      .footer-links {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .footer-links a {
+        color: var(--footer-link);
+        text-decoration: none;
+        font-weight: bold;
+        transition: text-decoration 0.2s;
+      }
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 700px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1rem 0.5rem;
+        }
+        .logo {
+          margin-left: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+        nav {
+          margin-right: 0.5rem;
+          gap: 1rem;
+        }
+        main {
+          padding: 0 0.5rem;
+        }
+        .newsletter-section {
+          padding: 1.2rem 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">ShopLogo</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Produkte</a>
+        <a href="#">Kategorien</a>
+        <a href="#">Kontakt</a>
+      </nav>
+    </header>
+    <main>
+      <!-- Produkte -->
+      <section class="produkte-section">
+        <h2>Beliebte Produkte</h2>
+        <div class="produkte-grid">
+          <div class="produkt-card">
+            <img
+              src="https://via.placeholder.com/180x130?text=Kopfhörer"
+              alt="Bluetooth Kopfhörer"
+            />
+            <h3>Bluetooth Kopfhörer</h3>
+            <div class="preis">49,99 €</div>
+            <button>Zum Produkt</button>
+          </div>
+          <div class="produkt-card">
+            <img
+              src="https://via.placeholder.com/180x130?text=Smartphone"
+              alt="Smartphone X200"
+            />
+            <h3>Smartphone X200</h3>
+            <div class="preis">299,00 €</div>
+            <button>Zum Produkt</button>
+          </div>
+          <div class="produkt-card">
+            <img
+              src="https://via.placeholder.com/180x130?text=Hoodie"
+              alt="Unisex Hoodie"
+            />
+            <h3>Unisex Hoodie</h3>
+            <div class="preis">39,99 €</div>
+            <button>Zum Produkt</button>
+          </div>
+          <div class="produkt-card">
+            <img
+              src="https://via.placeholder.com/180x130?text=Toaster"
+              alt="Toaster 2-Scheiben"
+            />
+            <h3>Toaster 2-Scheiben</h3>
+            <div class="preis">24,99 €</div>
+            <button>Zum Produkt</button>
+          </div>
+        </div>
+      </section>
+      <!-- Kategorien -->
+      <section class="kategorien-section">
+        <h2>Kategorien</h2>
+        <div class="kategorien-grid">
+          <div class="kategorie-card">Elektronik</div>
+          <div class="kategorie-card">Kleidung</div>
+          <div class="kategorie-card">Haushalt</div>
+          <div class="kategorie-card">Sport</div>
+        </div>
+      </section>
+      <!-- Newsletter -->
+      <section class="newsletter-section">
+        <h2>Newsletter abonnieren</h2>
+        <p>Erhalten Sie exklusive Angebote und Produktnews.</p>
+        <form>
+          <input type="email" placeholder="Ihre E-Mail" required />
+          <button type="submit">Abonnieren</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Produkte</a>
+        <a href="#">Kategorien</a>
+        <a href="#">Kontakt</a>
+      </div>
+      &copy; 2025 VSC-Copilot Webshop. Alle Rechte vorbehalten.
+    </footer>
+  </body>
+</html>

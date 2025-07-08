@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktübersicht</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/150" alt="Shop Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Startseite</a></li>
+                <li><a href="#">Produkte</a></li>
+                <li><a href="#">Über uns</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filter-section">
+            <h2>Produkte filtern</h2>
+            <div class="filter-container">
+                <select id="category-filter">
+                    <option value="">Alle Kategorien</option>
+                    <option value="elektronik">Elektronik</option>
+                    <option value="mode">Mode</option>
+                    <option value="haushaltswaren">Haushaltswaren</option>
+                    <option value="sporteinrichtung">Sporteinrichtung</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="products-grid">
+            <div class="product-card" data-category="elektronik">
+                <img src="https://via.placeholder.com/300" alt="Produkt 1">
+                <h3>Smartphone Pro Max</h3>
+                <p class="price">€999,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="mode">
+                <img src="https://via.placeholder.com/300" alt="Produkt 2">
+                <h3>Designer T-Shirt</h3>
+                <p class="price">€49,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="haushaltswaren">
+                <img src="https://via.placeholder.com/300" alt="Produkt 3">
+                <h3>Stromkessel</h3>
+                <p class="price">€29,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="sporteinrichtung">
+                <img src="https://via.placeholder.com/300" alt="Produkt 4">
+                <h3>Fitnessband</h3>
+                <p class="price">€79,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="elektronik">
+                <img src="https://via.placeholder.com/300" alt="Produkt 5">
+                <h3>Laptop Pro</h3>
+                <p class="price">€1.499,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="mode">
+                <img src="https://via.placeholder.com/300" alt="Produkt 6">
+                <h3>Leather Jacket</h3>
+                <p class="price">€149,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="haushaltswaren">
+                <img src="https://via.placeholder.com/300" alt="Produkt 7">
+                <h3>Mikrowelle</h3>
+                <p class="price">€129,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="sporteinrichtung">
+                <img src="https://via.placeholder.com/300" alt="Produkt 8">
+                <h3>Laufband</h3>
+                <p class="price">€999,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="elektronik">
+                <img src="https://via.placeholder.com/300" alt="Produkt 9">
+                <h3>Tablet</h3>
+                <p class="price">€499,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+            <div class="product-card" data-category="mode">
+                <img src="https://via.placeholder.com/300" alt="Produkt 10">
+                <h3>Jeans</h3>
+                <p class="price">€59,99</p>
+                <button class="add-to-cart">In den Warenkorb</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Informationen</h4>
+                <ul>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">AGBs</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kundeninformation</h4>
+                <ul>
+                    <li><a href="#">Versand</a></li>
+                    <li><a href="#">Retouren</a></li>
+                    <li><a href="#">Zahlungsmethoden</a></li>
+                    <li><a href="#">Kundenkonto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+                <p>Email: info@shop.de</p>
+                <p>Telefon: +49 (0) 123 456789</p>
+                <p>Adresse: Musterstraße 123, 12345 Musterstadt</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shop GmbH. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/150" alt="Shop Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="indexWindsurf.html">Startseite</a></li>
+                <li><a href="products.html">Produkte</a></li>
+                <li><a href="about.html">Über uns</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="contact-page">
+        <section class="team-section">
+            <h2>Unser Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/300" alt="Max Mustermann">
+                    </div>
+                    <h3>Max Mustermann</h3>
+                    <p class="role">Geschäftsführer</p>
+                    <p class="bio">Max hat über 15 Jahre Erfahrung in der E-Commerce-Branche und führt unser Unternehmen mit großer Leidenschaft.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/300" alt="Anna Müller">
+                    </div>
+                    <h3>Anna Müller</h3>
+                    <p class="role">Kundenservice-Managerin</p>
+                    <p class="bio">Anna ist für unseren hervorragenden Kundenservice verantwortlich und sorgt dafür, dass unsere Kunden zufrieden sind.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/300" alt="Peter Schmidt">
+                    </div>
+                    <h3>Peter Schmidt</h3>
+                    <p class="role">Technischer Direktor</p>
+                    <p class="bio">Peter entwickelt die technische Infrastruktur unseres Shops und sorgt für eine sichere und zuverlässige Plattform.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Kontaktieren Sie uns</h2>
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Betreff:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Bitte wählen Sie einen Betreff</option>
+                        <option value="support">Kundensupport</option>
+                        <option value="order">Bestellung</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Sonstiges</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Nachricht:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Nachricht senden</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Informationen</h4>
+                <ul>
+                    <li><a href="#">Über uns</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">AGBs</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kundeninformation</h4>
+                <ul>
+                    <li><a href="#">Versand</a></li>
+                    <li><a href="#">Retouren</a></li>
+                    <li><a href="#">Zahlungsmethoden</a></li>
+                    <li><a href="#">Kundenkonto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+                <p>Email: info@shop.de</p>
+                <p>Telefon: +49 (0) 123 456789</p>
+                <p>Adresse: Musterstraße 123, 12345 Musterstadt</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shop GmbH. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>

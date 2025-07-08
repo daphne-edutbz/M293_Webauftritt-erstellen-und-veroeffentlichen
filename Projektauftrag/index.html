@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webshop - Startseite</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">WebShop</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Produkte</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero-Bereich -->
+      <section class="hero">
+        <h1>Willkommen bei unserem Webshop</h1>
+        <p>Entdecken Sie unsere Auswahl an hochwertigen Produkten</p>
+      </section>
+      <!-- Beliebte Produkte -->
+      <section class="featured-products">
+        <h2>Beliebte Produkte</h2>
+        <div class="product-grid">
+          <!-- Beispiel: 3 ausgewählte Bestseller -->
+
+          <a href="productdetail.html?productId=iphone-14">
+            <article class="produkt-card">
+              <img
+                src="https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-iPhone-14-Plus-2up-starlight-220907-geo_inline.jpg.large.jpg"
+                alt="Apple iPhone 14"
+              />
+              <h2>Apple iPhone 14</h2>
+              <p>
+                6,1" Super Retina XDR Display, Dual-Kamera, A15 Bionic Chip.
+              </p>
+              <div class="preis">849,00 €</div>
+            </article>
+          </a>
+
+          <a href="productdetail.html?productId=adidas-hoodie">
+            <article class="produkt-card">
+              <img
+                src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/dc04fcc1ac7645deb0b537e93f67d381_9366/Trefoil_Essentials_Hoodie_White_IX7669_01_laydown.jpg"
+                alt="Adidas Essentials Hoodie"
+              />
+              <h2>Adidas Essentials Hoodie</h2>
+              <p>Klassischer Hoodie aus weicher Baumwollmischung.</p>
+              <div class="preis">49,99 €</div>
+            </article>
+          </a>
+
+          <a href="productdetail.html?productId=philips-wasserkocher">
+            <article class="produkt-card">
+              <img
+                src="https://static02.galaxus.com/productimages/1/1/2/3/3/9/0/2/6/9/4/6/5/4/0/4/8/7/2/aec828ab-cde2-431b-9f41-7e5ed8032788_cropped.jpg_720.jpeg"
+                alt="Philips Wasserkocher"
+              />
+              <h2>Philips Wasserkocher</h2>
+              <p>1,7 Liter Edelstahlkorpus mit automatischer Abschaltung</p>
+              <div class="product-price">39,99 €</div>
+            </article>
+          </a>
+        </div>
+      </section>
+
+      <!-- Produktkategorien -->
+      <section class="categories" id="kategorien">
+        <h2>Unsere Kategorien</h2>
+        <div class="category-cards">
+          <div class="category-card">
+            <div class="category-icon">📱</div>
+            <h3 class="category-title">Elektronik</h3>
+            <p class="category-description">Smartphones, Laptops und mehr</p>
+          </div>
+          <div class="category-card">
+            <div class="category-icon">👕</div>
+            <h3 class="category-title">Kleidung</h3>
+            <p class="category-description">
+              Modische Outfits für jeden Anlass
+            </p>
+          </div>
+          <div class="category-card">
+            <div class="category-icon">🍳</div>
+            <h3 class="category-title">Haushaltswaren</h3>
+            <p class="category-description">Alles für den Haushalt</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="kontakt">
+      <h2>Abonniere unseren Newsletter</h2>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Deine E-Mail-Adresse" required />
+        <button type="submit">Abonnieren</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>WebShop</h3>
+          <p>Dein Partner für hochwertige Produkte</p>
+        </div>
+        <div class="footer-section">
+          <h3>Kategorien</h3>
+          <ul>
+            <li><a href="#">Elektronik</a></li>
+            <li><a href="#">Kleidung</a></li>
+            <li><a href="#">Haushaltswaren</a></li>
+            <li><a href="#">Sport</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <ul>
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2025 WebShop. Alle Rechte vorbehalten.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt – Webshop</title>
+    <style>
+      :root {
+        --primary: #0078d4;
+        --primary-dark: #005fa3;
+        --light-bg: #fafafa;
+        --card-bg: #fff;
+        --footer-bg: #222;
+        --footer-link: #ffd700;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--light-bg);
+        color: #222;
+      }
+      header {
+        background: var(--primary);
+        color: #fff;
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-left: 2rem;
+        letter-spacing: 1px;
+      }
+      nav {
+        display: flex;
+        gap: 2rem;
+        margin-right: 2rem;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: var(--footer-link);
+      }
+      main {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+      /* Team */
+      .team-section {
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        padding: 2rem 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .team-grid {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .team-member {
+        flex: 1 1 220px;
+        max-width: 260px;
+        background: #f6faff;
+        border-radius: 8px;
+        padding: 1.2rem 1rem;
+        text-align: center;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        margin-bottom: 1rem;
+      }
+      .team-member img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 0.7rem;
+        background: #eee;
+      }
+      .team-member .name {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+      }
+      .team-member .rolle {
+        color: var(--primary);
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .team-member .bio {
+        font-size: 0.97rem;
+        color: #444;
+      }
+      /* Kontaktformular */
+      .kontakt-section {
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        padding: 2rem 1.5rem;
+        max-width: 600px;
+        margin: 0 auto 1.5rem auto;
+      }
+      .kontakt-section h2 {
+        margin-top: 0;
+      }
+      .kontakt-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+      }
+      .kontakt-form label {
+        font-weight: bold;
+        margin-bottom: 0.2rem;
+      }
+      .kontakt-form input,
+      .kontakt-form textarea,
+      .kontakt-form select {
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .kontakt-form textarea {
+        resize: vertical;
+        min-height: 70px;
+        max-height: 200px;
+      }
+      .kontakt-form button {
+        padding: 0.7rem 1.5rem;
+        border-radius: 4px;
+        border: none;
+        background: var(--primary);
+        color: #fff;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-top: 0.5rem;
+      }
+      .kontakt-form button:hover {
+        background: var(--primary-dark);
+      }
+      footer {
+        background: var(--footer-bg);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem 1rem 1rem;
+        margin-top: 2rem;
+      }
+      .footer-links {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .footer-links a {
+        color: var(--footer-link);
+        text-decoration: none;
+        font-weight: bold;
+        transition: text-decoration 0.2s;
+      }
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 900px) {
+        .team-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+        .team-member {
+          max-width: 340px;
+        }
+      }
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 1rem 0.5rem;
+        }
+        .logo {
+          margin-left: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+        nav {
+          margin-right: 0.5rem;
+          gap: 1rem;
+        }
+        main {
+          padding: 0 0.5rem;
+        }
+        .team-section,
+        .kontakt-section {
+          padding: 1rem 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">ShopLogo</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Produkte</a>
+        <a href="#">Kategorien</a>
+        <a href="#">Kontakt</a>
+      </nav>
+    </header>
+    <main>
+      <!-- Team -->
+      <section class="team-section">
+        <h2>Unser Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Max Mustermann"
+            />
+            <div class="name">Max Mustermann</div>
+            <div class="rolle">Geschäftsführer</div>
+            <div class="bio">
+              Gründer und Visionär. Max sorgt für reibungslose Abläufe und
+              innovative Ideen im Webshop.
+            </div>
+          </div>
+          <div class="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Julia Beispiel"
+            />
+            <div class="name">Julia Beispiel</div>
+            <div class="rolle">Kundensupport</div>
+            <div class="bio">
+              Julia beantwortet Ihre Fragen und hilft Ihnen bei allen Anliegen
+              rund um Ihre Bestellung.
+            </div>
+          </div>
+          <div class="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/men/54.jpg"
+              alt="Tobias Muster"
+            />
+            <div class="name">Tobias Muster</div>
+            <div class="rolle">Technik & Versand</div>
+            <div class="bio">
+              Tobias kümmert sich um die Technik und sorgt dafür, dass Ihre
+              Produkte schnell bei Ihnen ankommen.
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Kontaktformular -->
+      <section class="kontakt-section">
+        <h2>Kontaktieren Sie uns</h2>
+        <form class="kontakt-form">
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">E-Mail*</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="betreff">Betreff*</label>
+          <select id="betreff" name="betreff" required>
+            <option value="">Bitte wählen</option>
+            <option value="support">Support</option>
+            <option value="bestellung">Bestellung</option>
+            <option value="feedback">Feedback</option>
+          </select>
+
+          <label for="nachricht">Nachricht*</label>
+          <textarea id="nachricht" name="nachricht" required></textarea>
+
+          <button type="submit">Absenden</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Produkte</a>
+        <a href="#">Kategorien</a>
+        <a href="#">Kontakt</a>
+      </div>
+      &copy; 2025 Webshop.
+    </footer>
+  </body>
+</html>
